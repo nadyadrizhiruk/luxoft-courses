@@ -1,4 +1,4 @@
-package ua.dp.drizhiruk.lesson2;
+package ua.dp.drizhiruk.lesson2.sorting;
 
 public class SelectionSort {
 
