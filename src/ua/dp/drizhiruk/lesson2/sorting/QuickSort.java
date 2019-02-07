@@ -1,13 +1,13 @@
-package ua.dp.drizhiruk.lesson2.sorting.quick;
+package ua.dp.drizhiruk.lesson2.sorting;
 
-class QuickSort {
+class QuickSort extends Sort{
 
     private int pivotIndex(int[] b, int firstIndex, int lastIndex) {
 
         return firstIndex + (lastIndex - firstIndex) / 2;
     }
 
-    public void sortArray(int[] b, int firstIndex, int lastIndex) {
+    public void sort(int[] b, int firstIndex, int lastIndex) {
 
         if (firstIndex == lastIndex) {
 
@@ -42,10 +42,10 @@ class QuickSort {
         }
 
         if (firstIndex < pivotIndex - 1) {
-            sortArray(b, firstIndex, pivotIndex - 1);
+            sort(b, firstIndex, pivotIndex - 1);
         }
         if ((pivotIndex + 1) < lastIndex) {
-            sortArray(b, pivotIndex + 1, lastIndex);
+            sort(b, pivotIndex + 1, lastIndex);
         }
     }
 }
