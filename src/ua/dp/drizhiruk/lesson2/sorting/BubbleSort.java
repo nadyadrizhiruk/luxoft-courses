@@ -1,6 +1,6 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
-public class BubbleSort {
+public class BubbleSort extends Sort{
 
     public void sort(int[] ints) {
 
