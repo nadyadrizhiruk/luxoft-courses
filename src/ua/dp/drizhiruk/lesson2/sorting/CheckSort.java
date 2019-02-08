@@ -10,6 +10,7 @@ public class CheckSort {
         check(new SelectionSort(), 20, "Selection sort:");
         check(new QuickSort(), 20, "Quick sort:");
         check(new BubbleSort(), 20, "Bubble sort:");
+        check(new MergeSort(), 20, "Merge sort:");
     }
 
     public static void check(Sort sorter, int amountElementsOfArray, String info){
@@ -17,7 +18,7 @@ public class CheckSort {
         System.out.println("___________________________________");
         System.out.println(info);
 
-        int[] ints= ArrayWorkSupport.createNewFilledArray(amountElementsOfArray);
+        int[] ints=ArrayWorkSupport.createNewFilledArray(amountElementsOfArray);
 
         System.out.println("Original array:");
         ArrayWorkSupport.printArray(ints);

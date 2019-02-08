@@ -21,11 +21,6 @@ public class SelectionSort extends Sort{
             }
 
             ArrayWorkSupport.switchItems(ints,index,i);
-//            ints[index] = ints[i];
-//            ints[i] = min;
-
         }
-
-
     }
 }
