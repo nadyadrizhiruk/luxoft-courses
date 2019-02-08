@@ -20,11 +20,6 @@ public class InsertionSort extends Sort{
 
                 ints[j + 1] = tmp;
             }
-
         }
-
-
     }
-
-
 }

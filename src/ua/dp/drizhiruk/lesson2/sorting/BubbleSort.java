@@ -1,26 +1,26 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
-public class BubbleSort extends Sort{
+import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
+
+public class BubbleSort extends Sort {
 
     public void sort(int[] ints) {
 
         for (int i = 0; i < ints.length; i++) {
 
-            boolean isSortingNided = false;
+            boolean isSortingNeeded = false;
 
             for (int j = ints.length - 1; j > i; j--) {
 
                 if (ints[j] < ints[j - 1]) {
 
-                    int tmp = ints[j];
-                    ints[j] = ints[j - 1];
-                    ints[j - 1] = tmp;
+                    ArrayWorkSupport.switchItems(ints,j,j-1);
 
-                    isSortingNided = true;
+                    isSortingNeeded = true;
                 }
             }
 
-            if (!isSortingNided) {
+            if (!isSortingNeeded) {
                 break;
             }
         }

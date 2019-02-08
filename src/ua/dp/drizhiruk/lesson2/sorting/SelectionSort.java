@@ -1,5 +1,7 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
+import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
+
 public class SelectionSort extends Sort{
 
     public void sort(int[] ints) {
@@ -10,6 +12,7 @@ public class SelectionSort extends Sort{
             int index = i;
 
             for (int j = i + 1; j < ints.length; j++) {
+
                 if (min > ints[j]) {
 
                     min = ints[j];
@@ -17,8 +20,9 @@ public class SelectionSort extends Sort{
                 }
             }
 
-            ints[index] = ints[i];
-            ints[i] = min;
+            ArrayWorkSupport.switchItems(ints,index,i);
+//            ints[index] = ints[i];
+//            ints[i] = min;
 
         }
 

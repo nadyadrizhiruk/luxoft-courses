@@ -1,5 +1,7 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
+import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
+
 public class CheckSort {
 
     public static void main(String[] args) {
@@ -12,17 +14,17 @@ public class CheckSort {
 
     public static void check(Sort sorter, int amountElementsOfArray, String info){
 
+        System.out.println("___________________________________");
         System.out.println(info);
-        SortSupport s = new SortSupport();
 
-        int[] ints= s.createNewFilledArray(amountElementsOfArray);
+        int[] ints= ArrayWorkSupport.createNewFilledArray(amountElementsOfArray);
 
         System.out.println("Original array:");
-        s.printArray(ints);
+        ArrayWorkSupport.printArray(ints);
 
         sorter.sort(ints);
 
         System.out.println("Sorted array:");
-        s.printArray(ints);
+        ArrayWorkSupport.printArray(ints);
     }
 }

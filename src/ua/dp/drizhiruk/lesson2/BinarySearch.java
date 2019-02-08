@@ -1,7 +1,6 @@
 package ua.dp.drizhiruk.lesson2;
 
 import ua.dp.drizhiruk.lesson2.sorting.InsertionSort;
-import ua.dp.drizhiruk.lesson2.sorting.SortSupport;
 
 import java.util.Scanner;
 
@@ -9,14 +8,12 @@ public class BinarySearch {
 
     public static void main(String[] args) {
 
-        SortSupport s = new SortSupport();
-
-        int[] ints = s.createNewFilledArray(10);
+        int[] ints = ArrayWorkSupport.createNewFilledArray(10);
 
         new InsertionSort().sort(ints);
 
         System.out.println("Sorted array:");
-        s.printArray(ints);
+        ArrayWorkSupport.printArray(ints);
 
         binarySearch(ints);
 

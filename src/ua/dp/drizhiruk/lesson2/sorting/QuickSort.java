@@ -1,51 +1,76 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
-class QuickSort extends Sort{
+import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
 
-    private int pivotIndex(int[] b, int firstIndex, int lastIndex) {
+class QuickSort extends Sort {
+
+    private int pivotIndex(int firstIndex, int lastIndex) {
 
         return firstIndex + (lastIndex - firstIndex) / 2;
     }
 
-    public void sort(int[] b, int firstIndex, int lastIndex) {
+    public void sort(int[] ints) {
+
+        sortIntervals(ints, 0, ints.length - 1);
+    }
+
+    private void sortIntervals(int[] ints, int firstIndex, int lastIndex) {
 
         if (firstIndex == lastIndex) {
 
             return;
-
         }
 
-        int pivotIndex = pivotIndex(b, firstIndex, lastIndex);
+        int pivotIndex = pivotIndex(firstIndex, lastIndex);
+        int i;
+        int j = lastIndex;
 
-        for (int i = firstIndex; i <= lastIndex; i++) {
+        //switching places between right bigger then pivot elements and left less then pivot elements
 
-            if ((b[i] > b[pivotIndex]) & (i < pivotIndex)) {
+        for (i = firstIndex; ((i < pivotIndex) & (j > pivotIndex)); i++) {
 
-                int tmp = b[i];
-                b[i] = b[pivotIndex];
-                b[pivotIndex] = tmp;
-                pivotIndex = i;
-            }
+            if (ints[i] > ints[pivotIndex]) {
 
-            if ((b[i] < b[pivotIndex]) & (i > pivotIndex)) {
+                for (; j > pivotIndex; j--) {
 
-                int tmp = b[i];
+                    if (ints[j] < ints[pivotIndex]) {
 
-                for (int j = i; j > pivotIndex; j--) {
-                    b[j] = b[j - 1];
+                        ArrayWorkSupport.switchItems(ints, i, j);
+                        j--;
+                        break;
+                    }
                 }
-
-                b[pivotIndex] = tmp;
-                pivotIndex += 1;
             }
+        }
 
+        i = (i > 0) ? i - 1 : 0;
+
+        // putting into right position elements remaining into wrong place
+        //from left or right side of pivot element
+
+        while (i < pivotIndex) {
+            if (ints[i] > ints[pivotIndex]) {
+                ArrayWorkSupport.rightInsertion(ints, i, pivotIndex);
+                pivotIndex = pivotIndex - 1;
+            } else {
+                i++;
+            }
+        }
+
+        while (j > pivotIndex) {
+            if (ints[j] < ints[pivotIndex]) {
+                ArrayWorkSupport.leftInsertion(ints, j, pivotIndex);
+                pivotIndex = pivotIndex + 1;
+            } else {
+                j--;
+            }
         }
 
         if (firstIndex < pivotIndex - 1) {
-            sort(b, firstIndex, pivotIndex - 1);
+            sortIntervals(ints, firstIndex, pivotIndex - 1);
         }
         if ((pivotIndex + 1) < lastIndex) {
-            sort(b, pivotIndex + 1, lastIndex);
+            sortIntervals(ints, pivotIndex + 1, lastIndex);
         }
     }
 }
