@@ -2,7 +2,7 @@ package ua.dp.drizhiruk.lesson2.sorting;
 
 import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
 
-public class BubbleSort extends Sort {
+public class BubbleSort implements Sort {
 
     public void sort(int[] ints) {
 

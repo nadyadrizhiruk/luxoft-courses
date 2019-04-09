@@ -2,7 +2,7 @@ package ua.dp.drizhiruk.lesson2.sorting;
 
 import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
 
-class QuickSort extends Sort {
+class QuickSort implements Sort {
 
     private int pivotIndex(int firstIndex, int lastIndex) {
 

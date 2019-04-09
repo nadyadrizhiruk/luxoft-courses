@@ -1,6 +1,6 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
-public class MergeSort extends Sort {
+public class MergeSort implements Sort {
 
     public void sort(int[] ints) {
 

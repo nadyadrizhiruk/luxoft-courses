@@ -2,7 +2,7 @@ package ua.dp.drizhiruk.lesson2.sorting;
 
 import ua.dp.drizhiruk.lesson2.ArrayWorkSupport;
 
-public class SelectionSort extends Sort{
+public class SelectionSort implements Sort{
 
     public void sort(int[] ints) {
 

@@ -1,6 +1,6 @@
 package ua.dp.drizhiruk.lesson2.sorting;
 
-public class InsertionSort extends Sort{
+public class InsertionSort implements Sort{
 
 
     public void sort(int[] ints) {
